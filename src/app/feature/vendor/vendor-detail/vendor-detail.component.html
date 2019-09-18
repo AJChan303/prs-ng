@@ -1,0 +1,45 @@
+<div class='component-content'>
+  <div class=''>
+    <div class='lefthalf'>
+      <span class='component-title'>[{{title}}]</span>
+    </div>
+  </div>
+  <table class="table table-sm" *ngIf='vendor'>
+    <tr>
+      <td>vendor Name</td>
+      <td>{{ vendor.name }}</td>
+    </tr>
+    <tr>
+      <td>code</td>
+      <td>{{ vendor.code }}</td>
+    </tr>
+    <tr>
+      <td>address</td>
+      <td>{{ vendor.address }}</td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td>{{ vendor.phone }}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{ vendor.email }}</td>
+    </tr>
+    <tr>
+      <td>zip</td>
+      <td>{{ vendor.zip }}</td>
+    </tr>
+    <tr>
+      <td>state</td>
+      <td>{{ vendor.state }}</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <!-- <a *ngIf='loggedInvendor.admin || loggedInvendor.vendorName == vendor.vendorName' routerLink='/vendor/edit/{{vendor.id}}' class='btn btn-primary' title='Edit' style='margin-right: 5px'>Edit</a>
+        <button *ngIf='loggedInvendor.admin' (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button> -->
+        <a routerLink='/vendor/edit/{{vendor.id}}' class='btn btn-primary' title='Edit' style='margin-right: 5px'>Edit</a>
+        <button  (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button>
+      </td>
+    </tr>
+  </table>
+</div>

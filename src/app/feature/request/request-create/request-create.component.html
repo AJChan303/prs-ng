@@ -1,0 +1,43 @@
+<div class='component-content'>
+    <div>
+        <span class='component-title'>[{{title}}] | </span>
+        <!-- | <span><a routerLink='/request/create'>New Request</a></span> -->
+        <span><a routerLink='/request/list'>Back to list</a></span>
+    </div>
+    <p *ngIf='undefined'>Loading ...</p>
+
+    <div *ngIf='request'>
+        <div class='form-group row'>
+            <!-- <label class='col-form-label col-sm-2' for="user">user:</label>
+            <div class=' col-sm-6'>
+                <span class='form-control'>
+                    {{request.user.firstname}}</span>
+            </div> -->
+        </div>
+        <div class="form-group row">
+            <label class='col-form-label col-sm-2' for="requestpartnumber">Description:</label>
+            <input [(ngModel)]='request.description' name='PartNumber' type="text" class="form-control col-sm-6"
+                id="requestpartnumber" aria-describedby="emailHelp" placeholder="Description">
+            <small id="emailHelp" class="form-text text-muted col-sm-2">Description</small>
+        </div>
+        <div class="form-group row">
+            <label class='col-form-label col-sm-2' for="requestname">Justification:</label>
+            <input [(ngModel)]='request.justification' name='Name' type="text" class="form-control col-sm-6"
+                id="requestname" aria-describedby="emailHelp" placeholder="Name">
+            <small id="emailHelp" class="form-text text-muted col-sm-2">Justification</small>
+        </div>
+        <div class="form-group row">
+            <label class='col-form-label col-sm-2' for="requestprice">Delivery Mode:</label>
+            <select [(ngModel)]='request.deliveryMode' name='Price' type="number" class="form-control col-sm-6"
+                id="requestprice" aria-describedby="emailHelp" placeholder="Method">
+                <option *ngFor='let d of deliveryMeth'>{{d}}</option></select>
+                <small id="emailHelp" class="form-text text-muted col-sm-2">Deilvery Method</small>
+
+        </div>
+
+                <div class='form-group'>
+                    <button (click)='create()' class='btn btn-primary'>Create</button>
+                </div>
+        
+    </div>
+</div>

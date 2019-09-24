@@ -36,14 +36,15 @@ export class RequestLinesComponent implements OnInit {
     review(){
       this.requestSVC.setRev(this.request.id).subscribe(ans=>{
         this.request = ans as Request;
-        location.reload();
+        this.router.navigateByUrl('/request/list');
+        // location.reload();
       });
     }
     remove(id:number){
       this.rlSVC.delete(id).subscribe(
         resp=>{
           this.router.navigateByUrl('/requestlines/'+this.request.id);
-          location.reload();
+          this.ngOnInit();
         },
         err=>{
           console.log(err);

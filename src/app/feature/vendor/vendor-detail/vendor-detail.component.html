@@ -2,6 +2,7 @@
   <div class=''>
     <div class='lefthalf'>
       <span class='component-title'>[{{title}}]</span>
+      <span><a routerLink='/vendor/list'>Back to list</a></span>
     </div>
   </div>
   <table class="table table-sm" *ngIf='vendor'>
@@ -28,6 +29,10 @@
     <tr>
       <td>zip</td>
       <td>{{ vendor.zip }}</td>
+    </tr>
+    <tr>
+      <td>city</td>
+      <td>{{ vendor.city }}</td>
     </tr>
     <tr>
       <td>state</td>

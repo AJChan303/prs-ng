@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorService } from '@svc/vendor.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Vendor } from '@model/vendor.class';
+import { Vendor } from '../../../model/vendor.class';
 
 @Component({
   selector: 'app-vendor-edit',
@@ -10,13 +10,14 @@ import { Vendor } from '@model/vendor.class';
 })
 export class VendorEditComponent implements OnInit {
   vendor:Vendor=new Vendor();
+  title:string="Vendor Edit"
   constructor(private vendorSVC:VendorService, private router: Router, private route:ActivatedRoute ) { }
 
   edit(){
-    this.vendorSVC.edit(this.vendor).subscribe(resp=>{
+    console.log(this.vendor);
+    this.vendorSVC.edit(this.vendor, this.vendor.id).subscribe(resp=>{
         //success
-        console.log(resp);
-        this.router.navigateByUrl('/user/list');
+        this.router.navigateByUrl('/vendor/list');
     },
     err => {
       //error

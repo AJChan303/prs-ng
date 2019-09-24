@@ -16,24 +16,28 @@ export class RequestApproveComponent implements OnInit {
   requestLines:RequestLine[];
   
   
+  
   constructor(private requestSVC:RequestService, private router: Router,
                private route:ActivatedRoute, private rlSVC:RequestLineService ) { }
   title:string='Request Details';
   approve(){
     this.requestSVC.setApp(this.request.id).subscribe(ans=>{
       this.request = ans as Request;
-      location.reload();
     });
-   
+    // this.router.navigate(['/request/list']);
+    this.ngOnInit();
   }
   reject(){
-    this.requestSVC.setRej(this.request.id).subscribe(ans=>{
+    console.log(this.request);
+    this.requestSVC.setRej(this.request.id, this.request).subscribe(ans=>{
       this.request = ans as Request;
+      this.ngOnInit();
+    },
+    err=>{
+      console.log(err);
     });
-    this.requestSVC.edit(this.request.id, this.request).subscribe(ans=>{
-      this.request = ans as Request;
-    });
-    location.reload();
+    
+    // this.router.navigate(['/request/list']);
   }
 
   
@@ -43,7 +47,8 @@ export class RequestApproveComponent implements OnInit {
         this.request = resp as Request;
         console.log('request detail: ' +this.request.id);
       })
-    })
+    });
+    
     this.route.params.subscribe(parms=>{
       this.rlSVC.get(parms.id).subscribe(jresp=>{
         this.requestLines = jresp as RequestLine[];

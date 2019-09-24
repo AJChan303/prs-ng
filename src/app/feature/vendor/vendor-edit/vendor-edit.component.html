@@ -1,6 +1,7 @@
 <div id='component'>
   <div id='pagetitle'>
     <span>[{{title}}]</span>
+    <span><a routerLink='/vendor/list'>Back to list</a></span>
   </div>
   <p *ngIf='!vendor'>Loading...</p>
   <div *ngIf='vendor'>
@@ -55,7 +56,7 @@
     </div>
    
     <div class='form-group'>
-      <button (click)='edit();' class='btn btn-primary'>Create</button>
+      <button (click)='edit();' class='btn btn-primary'>Edit</button>
     </div>
   </div>
 </div>

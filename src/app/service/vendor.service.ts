@@ -21,8 +21,8 @@ export class VendorService {
     return this.http.post(this.url, vendor) as Observable<any>;
 
   }
-  edit(vendor:Vendor):Observable<any>{
-    return this.http.put(this.url, vendor) as Observable<any>;
+  edit(vendor:Vendor, id:number):Observable<any>{
+    return this.http.put(this.url+'/'+id, vendor) as Observable<any>;
   }
   delete(id:number):Observable<any>{
     return this.http.delete(this.url+'/'+id) as Observable<any>;

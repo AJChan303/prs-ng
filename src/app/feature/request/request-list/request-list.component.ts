@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Request } from '../../../../model/request.class';
-import { RequestService } from '../../../../service/request.service';
+import { Request } from '../../../model/request.class';
+import { RequestService } from '../../../service/request.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -15,7 +15,7 @@ export class RequestListComponent implements OnInit {
   sortOrder = 'asc';
 
   constructor(private reqSvc: RequestService) { }
-
+  
   ngOnInit() {
     this.reqSvc.list().subscribe(resp => {
       this.requests = resp as Request[];

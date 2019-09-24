@@ -1,0 +1,31 @@
+
+
+<div class='component-content'>
+        <div>
+          <span class='component-title'>[{{title}}] | </span>
+          <!-- | <span><a routerLink='/product/create'>New Product</a></span> -->
+          <span><a (click)="btList()">Back to list</a></span>
+        </div>
+        <p *ngIf='undefined'>Loading ...</p>
+      
+        <div *ngIf='product'>
+          <div class='form-group row'>
+            <label class='col-form-label col-sm-2' for="product">Product:</label>
+            <div class=' col-sm-6'>
+              <select [(ngModel)]='requestLine.product' class='form-control' name='Vendor' id='vendor'>
+                <option *ngFor="let product of products" [ngValue]="product">{{product.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class='col-form-label col-sm-2' for="quantity">Quantity:</label>
+            <input min=0 [(ngModel)]='requestLine.quantity' name='PartNumber' type="number" class="form-control col-sm-6"
+              id="quantity" aria-describedby="amthelp" placeholder="1">
+            <small id="amthelp" class="form-text text-muted col-sm-2">Amount</small>
+          </div>
+         
+          <div class='form-group'>
+            <button (click)='create()' class='btn btn-primary'>Create</button>
+          </div>
+        </div>
+      </div>

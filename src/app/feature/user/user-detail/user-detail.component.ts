@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '@model/user.class';
+import { User } from '../../../model/user.class';
 import { UserService } from '@svc/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { PhonePipe} from '../../../pipe/phone.pipe'
 
 @Component({
   selector: 'app-user-detail',

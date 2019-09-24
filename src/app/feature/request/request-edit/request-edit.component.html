@@ -44,7 +44,6 @@
               <!-- <a *ngIf='loggedInrequest.admin || loggedInrequest.requestName == request.requestName' routerLink='/request/edit/{{request.id}}' class='btn btn-primary' title='Edit' style='margin-right: 5px'>Edit</a>
               <button *ngIf='loggedInrequest.admin' (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button> -->
               <a routerLink='/request/edit/{{request.id}}' class='btn btn-primary' title='Edit' style='margin-right: 5px'>Edit</a>
-              <button  (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button>
             </td>
           </tr>
         </table>

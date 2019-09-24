@@ -5,7 +5,7 @@
 
     </div>
 </div>
-<p *ngIf='!request'>Loading ...</p>
+<!-- <p *ngIf='!request'>Loading ...</p> -->
 <table class="table table-sm" *ngIf='request'>
     <tr>
         <th class='table-secondary'></th>
@@ -41,7 +41,7 @@
 </table>
 <div class='lefthalf'>
     <span class='component-title'>[Request Lines] </span>
-    
+
     <!-- <span *ngIf='loggedInUser.admin'><a routerLink='/request/create'> -->
 
 </div>
@@ -63,33 +63,24 @@
         <td>{{rl.product.price | currency}}</td>
         <td>{{rl.quantity*rl.product.price | currency}}</td>
 
-        <!-- <td class='actions'>
-                    <a routerLink='/request-line/edit/{{rl.id}}' style='padding-left: 16px' class='actionIcon'><img
-                            src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
-                     <a *ngIf='loggedInUser.admin' routerLink='/request/edit/{{request.id}}' class='actionIcon'><img -->
-        <!-- <a routerLink='/requestlines/{{request.id}}' class='actionIcon'(click)='remove(rl.id)'><img src='assets/delete.jpg' width='20'
-                            height='20' title='Delete'></a>
-                    
-                </td> -->
+
 
     </tr>
     <tr>
         <td>
-               
-                        <label class='col-form-label col-sm-2' for="phone">Rejection Reason:</label>
-                        <input [(ngModel)]='request.rejectionReason' name='RR' type="text" class="form-control col-sm-6" id="phone"
-                          aria-describedby="phoneHelp" placeholder="">
-                        <small id="phoneHelp" class="form-text text-muted col-sm-2">Give reason for rejection</small>
-                      
+
+            <label class='col-form-label col-sm-2' for="phone">Rejection Reason:</label>
+            <input [(ngModel)]='request.rejectionReason' name='RR' type="text" class="form-control col-sm-6" id="rejectionReason"
+                aria-describedby="phoneHelp" placeholder="reason for rejection">
+            <small id="phoneHelp" class="form-text text-muted col-sm-2">Give reason for rejection</small>
+
         </td>
     </tr>
     <tr>
-            <td colspan="2">
-                <a  (click)="approve()" class='btn btn-primary' title='Approve' style='margin-right: 5px'>Approve</a>
-                <!-- <a  routerLink='/review/list' (click)="setApp(request.id)" class='btn btn-primary' title='Approve' style='margin-right: 5px'>Approve</a> -->
-                <!-- <a *ngIf='loggedInUser.admin || loggedInUser.userName == user.userName' routerLink='/user/edit/{{user.id}}' class='btn btn-primary' title='Edit' style='margin-right: 5px'>Edit</a> -->
-              <!-- <button *ngIf='loggedInUser.admin' (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button> -->
-              <button (click)="reject()" class='btn btn-danger' title='Delete'>Reject</button>
-            </td>
-          </tr>
+        <td colspan="2">
+            <a (click)="approve()" style='color:white' class='btn btn-primary' title='Approve'
+                style='margin-right: 5px'>Approve</a>
+            <a (click)="reject()" style='color:white' class='btn btn-danger' title='Delete'>Reject</a>
+        </td>
+    </tr>
 </table>

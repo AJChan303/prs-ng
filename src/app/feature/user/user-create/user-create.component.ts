@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '@model/user.class';
+import { User } from '../../../model/user.class';
 import { UserService } from '@svc/user.service';
 import { Router } from '@angular/router';
 
@@ -15,7 +15,6 @@ export class UserCreateComponent implements OnInit {
   create(){
     this.userSVC.create(this.user).subscribe(resp=>{
         //success
-        console.log(resp);
         this.router.navigateByUrl('/user/list');
     },
     err => {

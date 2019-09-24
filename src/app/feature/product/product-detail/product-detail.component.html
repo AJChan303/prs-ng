@@ -1,0 +1,37 @@
+<div class='component-content'>
+        <div class=''>
+          <div class='lefthalf'>
+            <span class='component-title'>[{{title}}]</span>
+            <span><a routerLink='/product/list'>Back to list</a></span>
+            
+          </div>
+        </div>
+        <table class="table table-sm" *ngIf='product'>
+          <tr>
+            <td>Part Number</td>
+            <td>{{ product.partNbr }}</td>
+          </tr>
+          <tr>
+            <td>Product Name</td>
+            <td>{{ product.name }}</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>{{ product.price | currency }} {{product.unit}}</td>
+          </tr>
+          <tr>
+            <td>Vendor</td>
+            <td>{{ product.vendor.name }}</td>
+          </tr>
+          
+          <tr>
+            <td colspan="2">
+              <!-- <a *ngIf='loggedInproduct.admin || loggedInproduct.productName == product.productName' routerLink='/product/edit/{{product.id}}' class='btn btn-primary' title='Edit' style='margin-right: 5px'>Edit</a>
+              <button *ngIf='loggedInproduct.admin' (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button> -->
+              <a routerLink='/product/edit/{{product.id}}' class='btn btn-primary' title='Edit' style='margin-right: 5px'>Edit</a>
+              <button  (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      

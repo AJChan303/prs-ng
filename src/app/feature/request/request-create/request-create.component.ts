@@ -29,7 +29,7 @@ export class RequestCreateComponent implements OnInit {
       this.reqSVC.create(this.request).subscribe(
         resp => {
           this.request = resp as Request;
-          this.router.navigate(['/request/list']);
+          this.router.navigate(['/requestlines/'+resp.id]);
       },
       err=>{
         console.log(err);

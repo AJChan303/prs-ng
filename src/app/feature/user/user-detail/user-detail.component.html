@@ -2,6 +2,7 @@
   <div class=''>
     <div class='lefthalf'>
       <span class='component-title'>[{{title}}]</span>
+      <span><a routerLink='/user/list'>Back to list</a></span>
     </div>
   </div>
   <table class="table table-sm" *ngIf='user'>
@@ -19,7 +20,7 @@
     </tr>
     <tr>
       <td>Phone</td>
-      <td>{{ user.phone }}</td>
+      <td>{{ user.phone}}</td>
     </tr>
     <tr>
       <td>Email</td>

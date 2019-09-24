@@ -1,6 +1,7 @@
 <div id='component'>
   <div id='pagetitle'>
     <span>[{{title}}]</span>
+    <span><a routerLink='/vendor/list'>Back to list</a></span>
   </div>
   <p *ngIf='!vendor'>Loading...</p>
   <div *ngIf='vendor'>

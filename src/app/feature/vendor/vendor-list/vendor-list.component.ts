@@ -54,7 +54,6 @@ export class VendorListComponent implements OnInit {
     this.VendorSvc.list().subscribe(
       resp =>{
         this.vendors = resp;
-        console.log(this.vendors);
       }
     );
   }

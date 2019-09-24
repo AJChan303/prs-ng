@@ -75,10 +75,13 @@
                 
             </td>
         </tr>
-        <tr>
-                <td colspan="2">
-                        <a  (click)="review()" class='btn btn-primary' title='Submit' style='margin-right: 5px'>Submit for Review</a>
+</table>
+       <div>
+           <a class='hibar' routerLink='/request-lines/create/{{request.id}}'>Create a New Product Request </a>
+       </div>
+                
+         <a style="float:right" *ngIf='request.status!="Review"'  (click)="review()" class='btn btn-primary' title='Submit' style='margin-right: 5px; color:white'>Submit for Review</a>
                      
-                    </td>
-        </tr>
-    </table>
+                
+       
+    
